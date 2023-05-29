@@ -33,8 +33,10 @@
 ---
 
 1. 어제와 오늘 날씨, 온도 비교<br/><br/> 
+![image](https://github.com/f-lab-edu/check-weather-temperature/assets/73331052/6de584c3-e2ad-4324-880a-fe925dd34226)
 
 2. 주간 날씨, 온도 비교<br/><br/> 
+![image](https://github.com/f-lab-edu/check-weather-temperature/assets/73331052/6ca2cec7-5354-4a8d-8f2c-57ce3d2993cd)
 
 
 <br/>
