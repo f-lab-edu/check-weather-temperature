@@ -1,0 +1,9 @@
+@import "reset.css";
+
+.temperature_icon{
+    width: 52px;
+}
+
+.btn_temperature_icon{
+    width: 30px;
+}
