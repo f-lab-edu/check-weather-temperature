@@ -1,9 +1,49 @@
 @import "reset.css";
 
-.temperature_icon{
-    width: 52px;
+.head_container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
-.btn_temperature_icon{
-    width: 30px;
+header {
+  width: 75%;
+  margin: 50px 0 25px 130px;
+}
+
+.header_h1 {
+  width: 400px;
+  text-align: center;
+}
+
+.temperature_icon {
+  width: 52px;
+}
+
+nav {
+  width: 25%;
+  margin: 100px 0 0 100px;
+}
+
+.nav_btn {
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(94, 94, 94);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 17.2px;
+  border: none;
+  width: 170px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.btn_temperature_icon {
+  width: 30px;
+}
+
+#myChart {
+  width: 1200px !important;
+  height: 600px !important;
+  margin: 0 auto;
 }
