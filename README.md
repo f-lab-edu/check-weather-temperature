@@ -1,5 +1,6 @@
 # check-weather-temperature(날씨 온도 비교 사이트)
-📌 개발기간 : 2023.05.25 ~
+📌 개발기간 : 2023.05.25 ~ 
+<br/>
 📌 사용 기술 : 
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/>
