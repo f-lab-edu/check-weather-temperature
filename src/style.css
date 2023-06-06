@@ -6,8 +6,8 @@
   justify-content: center;
 }
 
-header {
-  width: 75%;
+.header_title {
+  width: 1200px;
   margin: 50px 0 25px 130px;
 }
 
@@ -16,12 +16,12 @@ header {
   text-align: center;
 }
 
-.temperature_icon {
+.header_temperature_icon {
   width: 52px;
 }
 
-nav {
-  width: 25%;
+.nav {
+  width: 400px;
   margin: 100px 0 0 100px;
 }
 
@@ -31,7 +31,7 @@ nav {
   background-color: rgb(94, 94, 94);
   color: #ffffff;
   font-weight: 600;
-  font-size: 17.2px;
+  font-size: 17px;
   border: none;
   width: 170px;
   height: 40px;
@@ -42,8 +42,8 @@ nav {
   width: 30px;
 }
 
-#myChart {
-  width: 1200px !important;
-  height: 600px !important;
+.myChart{
+  width: 1200px;
+  height: 600px;
   margin: 0 auto;
 }
