@@ -12,23 +12,34 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <script src="./dist/bundle.js" type="module" defer></script>
+    <script src="../dist/bundle.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Yesterday & Today<br/>
-        Temperature
-        <img src="../assets/fever_temperature.png" class="temperature_icon"
-        alt="temperature_icon">
-      </h1>
-    </header>
-    <nav>
-      <button class="nav_btn">Go to Weekly
-        <img src="../assets/fever_temperature.png" class="btn_temperature_icon"
-        alt="temperature_icon">
-      </button>
-    </nav>
+    <div class="head_container">
+      <header class="header_title">
+        <h1 class="header_h1">
+          Yesterday & Today<br />
+          Temperature
+          <img
+            src="../assets/fever_temperature.png"
+            class="header_temperature_icon"
+            alt="header_temperature_icon"
+          />
+        </h1>
+      </header>
+      <nav class="nav">
+        <button class="nav_btn">
+          Go to Weekly
+          <img
+            src="../assets/fever_temperature.png"
+            class="btn_temperature_icon"
+            alt="btn_temperature_icon"
+          />
+        </button>
+      </nav>
+    </div>
     <main>
+      <canvas class="myChart"></canvas>
     </main>
   </body>
 </html>
