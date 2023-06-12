@@ -15,31 +15,43 @@
     <script src="../dist/bundle.js" defer></script>
   </head>
   <body>
-    <div class="head_container">
-      <header class="header_title">
-        <h1 class="header_h1">
-          Yesterday & Today<br />
-          Temperature
-          <img
-            src="../assets/fever_temperature.png"
-            class="header_temperature_icon"
-            alt="header_temperature_icon"
-          />
-        </h1>
-      </header>
-      <nav class="nav">
-        <button class="nav_btn">
-          Go to Weekly
-          <img
-            src="../assets/fever_temperature.png"
-            class="btn_temperature_icon"
-            alt="btn_temperature_icon"
-          />
-        </button>
-      </nav>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="head_container">
+            <header class="header_title">
+              <h1 class="header_h1">
+                Today & Tomorrow<br />
+                Temperature
+                <img
+                  src="../assets/fever_temperature.png"
+                  class="header_temperature_icon"
+                  alt="header_temperature_icon"
+                />
+              </h1>
+            </header>
+          </div>
+          <canvas class="todayChart"></canvas>
+        </div>
+        <div class="swiper-slide">
+          <div class="head_container">
+            <header class="header_title">
+              <h1 class="header_h1">
+                Weekly<br />
+                Temperature
+                <img
+                  src="../assets/fever_temperature.png"
+                  class="header_temperature_icon"
+                  alt="header_temperature_icon"
+                />
+              </h1>
+            </header>
+          </div>
+          <canvas class="weeklyChart"></canvas>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <main>
-      <canvas class="myChart"></canvas>
-    </main>
   </body>
 </html>

@@ -1,4 +1,5 @@
 @import "reset.css";
+@import "../node_modules/swiper/swiper-bundle.css";
 
 .head_container {
   display: flex;
@@ -8,7 +9,7 @@
 
 .header_title {
   width: 1200px;
-  margin: 50px 0 25px 130px;
+  margin: 50px 0 70px 130px;
 }
 
 .header_h1 {
@@ -20,30 +21,31 @@
   width: 52px;
 }
 
-.nav {
-  width: 400px;
-  margin: 100px 0 0 100px;
-}
-
-.nav_btn {
-  border-radius: 5px;
-  text-align: center;
-  background-color: rgb(94, 94, 94);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 17px;
-  border: none;
-  width: 170px;
-  height: 40px;
-  padding-left: 15px;
-}
-
-.btn_temperature_icon {
-  width: 30px;
-}
-
-.myChart{
+.todayChart {
   width: 1200px;
   height: 600px;
   margin: 0 auto;
+}
+
+.weeklyChart {
+  width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.swiper {
+  margin: 0 50px;
+}
+
+.swiper-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 0.5;
+  padding: 15px 5px;
+  border-radius: 20px;
+  color: black;
 }
