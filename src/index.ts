@@ -64,25 +64,13 @@ const getTodayData = async () => {
     const data = {
       //category : TMN 일 최저기온, item[301]
       //category : TMX 일 최고기온, item[410]
-      nowfcstDate1: nowData.response.body.items.item[48].fcstDate,
-      nowCategory1: nowData.response.body.items.item[48].category,
       nowTMN: nowData.response.body.items.item[48].fcstValue,
-      nowfcstDate2: nowData.response.body.items.item[157].fcstDate,
-      nowCategory2: nowData.response.body.items.item[157].category,
       nowTMX: nowData.response.body.items.item[157].fcstValue,
 
-      tomorrowfcstDate1: nowData.response.body.items.item[338].fcstDate,
-      tomorrowCategory1: nowData.response.body.items.item[338].category,
       tomorrowTMN: nowData.response.body.items.item[338].fcstValue,
-      tomorrowfcstDate2: nowData.response.body.items.item[447].fcstDate,
-      tomorrowCategory2: nowData.response.body.items.item[447].category,
       tomorrowTMX: nowData.response.body.items.item[447].fcstValue,
 
-      dayAfterTomorrowfcstDate1: nowData.response.body.items.item[628].fcstDate,
-      dayAfterTomorrowCategory1: nowData.response.body.items.item[628].category,
       dayAfterTomorrowTMN: nowData.response.body.items.item[628].fcstValue,
-      dayAfterTomorrowfcstDate2: nowData.response.body.items.item[737].fcstDate,
-      dayAfterTomorrowCategory2: nowData.response.body.items.item[737].category,
       dayAfterTomorrowTMX: nowData.response.body.items.item[737].fcstValue,
     };
 
@@ -121,6 +109,7 @@ const getTodayData = async () => {
     });
 
     chartjs.defaults.font.size = 15;
+
   } catch (error) {
     console.log("Error:", error);
   }
@@ -158,8 +147,6 @@ const getWeeklyData = async () => {
     TMXArr[4] = data.after4daysTMX;
     TMXArr[5] = data.after5daysTMX;
 
-    chartjs.defaults.font.size = 15;
-
     const canvas = <HTMLCanvasElement>document.querySelector(".weeklyChart");
     const ctx = canvas.getContext("2d");
     const weeklyChart = new chartjs(ctx, {
@@ -186,6 +173,9 @@ const getWeeklyData = async () => {
         ],
       },
     });
+
+    chartjs.defaults.font.size = 15;
+
   } catch (error) {
     console.log("Error:", error);
   }
