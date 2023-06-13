@@ -27,23 +27,23 @@ const nowFormat = now.format("YYYYMMDD");
 //chart로 그릴 날짜 포맷
 const nowFormat2 = now.format("MM/DD");
 const tomorrow = now.add(1, "d").format("MM/DD");
-const dayAfterTomorrow = now.add(2, "d").format("MM/DD");
-const twoDaysAfterTomorrow = now.add(3, "d").format("MM/DD");
-const threeDaysAfterTomorrow = now.add(4, "d").format("MM/DD");
-const fourDaysAfterTomorrow = now.add(5, "d").format("MM/DD");
-const fiveDaysAfterTomorrow = now.add(6, "d").format("MM/DD");
-const sixDaysAfterTomorrow = now.add(7, "d").format("MM/DD");
+const after2days = now.add(2, "d").format("MM/DD");
+const after3days = now.add(3, "d").format("MM/DD");
+const after4days = now.add(4, "d").format("MM/DD");
+const after5days = now.add(5, "d").format("MM/DD");
+const after6days = now.add(6, "d").format("MM/DD");
+const after7days = now.add(7, "d").format("MM/DD");
 
 //API로 조회할 날짜
 let dateArr: string[] = [];
 dateArr.push(nowFormat2);
 dateArr.push(tomorrow);
-dateArr.push(dayAfterTomorrow);
-dateArr.push(twoDaysAfterTomorrow);
-dateArr.push(threeDaysAfterTomorrow);
-dateArr.push(fourDaysAfterTomorrow);
-dateArr.push(fiveDaysAfterTomorrow);
-dateArr.push(sixDaysAfterTomorrow);
+dateArr.push(after2days);
+dateArr.push(after3days);
+dateArr.push(after4days);
+dateArr.push(after5days);
+dateArr.push(after6days);
+dateArr.push(after7days);
 
 //TMN 일 최저기온
 let TMNArr: string[] | number[] = [];
@@ -70,16 +70,16 @@ const getTodayData = async () => {
       tomorrowTMN: nowData.response.body.items.item[338].fcstValue,
       tomorrowTMX: nowData.response.body.items.item[447].fcstValue,
 
-      dayAfterTomorrowTMN: nowData.response.body.items.item[628].fcstValue,
-      dayAfterTomorrowTMX: nowData.response.body.items.item[737].fcstValue,
+      after2daysTMN: nowData.response.body.items.item[628].fcstValue,
+      after2daysTMX: nowData.response.body.items.item[737].fcstValue,
     };
 
     TMNArr[0] = parseInt(data.nowTMN);
     TMNArr[1] = parseInt(data.tomorrowTMN);
-    TMNArr[2] = parseInt(data.dayAfterTomorrowTMN);
+    TMNArr[2] = parseInt(data.after2daysTMN);
     TMXArr[0] = parseInt(data.nowTMX);
     TMXArr[1] = parseInt(data.tomorrowTMX);
-    TMXArr[2] = parseInt(data.dayAfterTomorrowTMX);
+    TMXArr[2] = parseInt(data.after2daysTMX);
 
     const canvas = <HTMLCanvasElement>document.querySelector(".todayChart");
     const ctx = canvas.getContext("2d");
@@ -138,26 +138,37 @@ const getWeeklyData = async () => {
 
       after5daysTMN: weeklyData.response.body.items.item[0].taMin5,
       after5daysTMX: weeklyData.response.body.items.item[0].taMax5,
+
+      after6daysTMN: weeklyData.response.body.items.item[0].taMin6,
+      after6daysTMX: weeklyData.response.body.items.item[0].taMax6,
+      
+      after7daysTMN: weeklyData.response.body.items.item[0].taMin7,
+      after7daysTMX: weeklyData.response.body.items.item[0].taMax7,
     };
 
     TMNArr[3] = data.after3daysTMN;
     TMNArr[4] = data.after4daysTMN;
     TMNArr[5] = data.after5daysTMN;
+    TMNArr[6] = data.after6daysTMN;
+    TMNArr[7] = data.after7daysTMN;
+
     TMXArr[3] = data.after3daysTMX;
     TMXArr[4] = data.after4daysTMX;
     TMXArr[5] = data.after5daysTMX;
+    TMXArr[6] = data.after6daysTMX;
+    TMXArr[7] = data.after7daysTMX;
 
     const canvas = <HTMLCanvasElement>document.querySelector(".weeklyChart");
     const ctx = canvas.getContext("2d");
     const weeklyChart = new chartjs(ctx, {
       type: "line",
       data: {
-        labels: [dateArr[0], dateArr[1], dateArr[2],dateArr[3], dateArr[4], dateArr[5]],
+        labels: dateArr,
         datasets: [
           {
             label: "Lowest Temperature",
             fill: false,
-            data: [TMNArr[0], TMNArr[1], TMNArr[2], TMNArr[3], TMNArr[4], TMNArr[5]],
+            data: TMNArr,
             backgroundColor: ["rgba(77,201,246, 0.2)"],
             borderColor: ["rgba(77,201,246, 1)"],
             borderWidth: 3,
@@ -165,7 +176,7 @@ const getWeeklyData = async () => {
           {
             label: "Highest Temperature",
             fill: false,
-            data: [TMXArr[0],TMXArr[1],TMXArr[2],TMXArr[3],TMXArr[4], TMXArr[5]],
+            data: TMXArr,
             backgroundColor: ["rgba(255, 99, 132, 0.2)"],
             borderColor: ["rgba(255, 99, 132, 1)"],
             borderWidth: 3,
